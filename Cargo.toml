@@ -1,0 +1,19 @@
+[package]
+name = "news-letter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-cors = "0.7.1"
+actix-web = "4"
+actix-web-prom = "0.10.0"
+env_logger = "0.11.8"
+log = "0.4.28"
+serde = "1.0.226"
+
+[profile.release]
+debug = false
+lto = "fat"
+codegen-units = 1
+split-debuginfo = "off"
+panic = "abort"

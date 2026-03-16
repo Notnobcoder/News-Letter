@@ -1,0 +1,22 @@
+services:
+  server:
+    build: .
+    mem_limit: 200m
+    expose:
+      - "8000"
+    networks:
+      - mynet
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80" # host port → container port
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - server
+    networks:
+      - mynet
+
+networks:
+  mynet:

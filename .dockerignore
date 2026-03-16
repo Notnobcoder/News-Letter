@@ -1,0 +1,18 @@
+# Rust build files
+/target
+**/*.rs.bk
+
+# IDE/editor stuff
+/.idea/
+/.vscode/
+/*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependency/package info
+Cargo.lock
+.dockerignore
+.git
+.gitignore
